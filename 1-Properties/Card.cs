@@ -9,9 +9,6 @@ namespace Properties
     /// </summary>
     public class Card
     {
-        private readonly string seed;
-        private readonly string name;
-        private readonly int ordinal;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Card"/> class.
@@ -22,9 +19,9 @@ namespace Properties
         public Card(string name, string seed, int ordinal)
         {
             
-            this.name = name;
-            this.ordinal = ordinal;
-            this.seed = seed;
+            this.Name = name;
+            this.Ordinal = ordinal;
+            this.Seed = seed;
         }
 
         /// <summary>
@@ -36,24 +33,24 @@ namespace Properties
         {
         }
 
-        public string GetSeed
+        public string Seed
         {
-            get { return seed; }
+            get;
         }
-        public string GetName
+        public string Name
         {
-            get { return name; }
+            get;
         }
 
-        public int GetOrdinal
+        public int Ordinal
         {
-            get { return ordinal; }
+            get;
         }
 
         /// <inheritdoc cref="object.ToString"/>
         public override string ToString()
         {
-            return "Name: " + GetName.ToString() + " - Seed: " + GetSeed.ToString() + " - Ordinal: " + GetOrdinal.ToString() + "\n";
+            return "Name: " + Name.ToString() + " - Seed: " + Seed.ToString() + " - Ordinal: " + Ordinal.ToString() + "\n";
             //return $"{this.GetType().Name}(Name={this.GetName()}, Seed={this.GetSeed()}, Ordinal={this.GetOrdinal()})";
         }
 
