@@ -36,20 +36,15 @@ namespace Properties
         {
         }
 
-        // TODO improve
         public string GetSeed
         {
             get { return seed; }
         }
-        //{ get; set; }
-
-        // TODO improve
         public string GetName
         {
             get { return name; }
         }
 
-        // TODO improve
         public int GetOrdinal
         {
             get { return ordinal; }
@@ -58,8 +53,7 @@ namespace Properties
         /// <inheritdoc cref="object.ToString"/>
         public override string ToString()
         {
-            // TODO understand string interpolation
-            return "Name: " + name + " - Seed: " + seed + " - Ordinal: " + ordinal;
+            return "Name: " + GetName + " - Seed: " + GetSeed + " - Ordinal: " + GetOrdinal;
             //return $"{this.GetType().Name}(Name={this.GetName()}, Seed={this.GetSeed()}, Ordinal={this.GetOrdinal()})";
         }
 
