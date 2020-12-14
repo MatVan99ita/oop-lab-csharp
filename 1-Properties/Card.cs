@@ -57,14 +57,14 @@ namespace Properties
         public override bool Equals(object obj)
         {
             return obj is Card card &&
-                   seed == card.seed &&
-                   name == card.name &&
-                   ordinal == card.ordinal;
+                   Seed == card.Seed &&
+                   Name == card.Name &&
+                   Ordinal == card.Ordinal;
         }
 
         public override int GetHashCode()
         {
-            return HashCode.Combine(seed, name, ordinal);
+            return HashCode.Combine(Seed, Name, Ordinal);
         }
     }
 }
