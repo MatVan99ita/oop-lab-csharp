@@ -53,7 +53,7 @@ namespace Properties
         /// <inheritdoc cref="object.ToString"/>
         public override string ToString()
         {
-            return "Name: " + GetName.ToString() + " - Seed: " + GetSeed.ToString() + " - Ordinal: " + GetOrdinal.ToString();
+            return "Name: " + GetName.ToString() + " - Seed: " + GetSeed.ToString() + " - Ordinal: " + GetOrdinal.ToString() + "\n";
             //return $"{this.GetType().Name}(Name={this.GetName()}, Seed={this.GetSeed()}, Ordinal={this.GetOrdinal()})";
         }
 
