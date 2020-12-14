@@ -36,19 +36,19 @@ namespace Properties
         // TODO improve
         public string GetSeed()
         {
-            return seed;
+            return this.seed;
         }
 
         // TODO improve
         public string GetName()
         {
-            return name;
+            return this.name;
         }
 
         // TODO improve
         public int GetOrdinal()
         {
-            return ordinal;
+            return this.ordinal;
         }
 
         /// <inheritdoc cref="object.ToString"/>
@@ -56,7 +56,6 @@ namespace Properties
         {
             // TODO understand string interpolation
             return $"{this.GetType().Name}(Name={this.GetName()}, Seed={this.GetSeed()}, Ordinal={this.GetOrdinal()})";
-            
         }
 
         public override bool Equals(object obj)
@@ -75,8 +74,5 @@ namespace Properties
         // TODO generate Equals(object obj)
 
         // TODO generate GetHashCode()
-
-
-
     }
 }
