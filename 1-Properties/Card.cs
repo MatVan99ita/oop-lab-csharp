@@ -1,6 +1,8 @@
 namespace Properties
 {
     using System;
+    using System.Collections.Generic;
+    using System.Text;
 
     /// <summary>
     /// The class models a card.
@@ -19,6 +21,7 @@ namespace Properties
         /// <param name="ordinal">the ordinal number of the card.</param>
         public Card(string name, string seed, int ordinal)
         {
+            
             this.name = name;
             this.ordinal = ordinal;
             this.seed = seed;
@@ -34,28 +37,30 @@ namespace Properties
         }
 
         // TODO improve
-        public string GetSeed()
+        public string GetSeed
         {
-            return this.seed;
+            get { return seed; }
+        }
+        //{ get; set; }
+
+        // TODO improve
+        public string GetName
+        {
+            get { return name; }
         }
 
         // TODO improve
-        public string GetName()
+        public int GetOrdinal
         {
-            return this.name;
-        }
-
-        // TODO improve
-        public int GetOrdinal()
-        {
-            return this.ordinal;
+            get { return ordinal; }
         }
 
         /// <inheritdoc cref="object.ToString"/>
         public override string ToString()
         {
             // TODO understand string interpolation
-            return $"{this.GetType().Name}(Name={this.GetName()}, Seed={this.GetSeed()}, Ordinal={this.GetOrdinal()})";
+            return "Name: " + name + " - Seed: " + seed + " - Ordinal: " + ordinal;
+            //return $"{this.GetType().Name}(Name={this.GetName()}, Seed={this.GetSeed()}, Ordinal={this.GetOrdinal()})";
         }
 
         public override bool Equals(object obj)
