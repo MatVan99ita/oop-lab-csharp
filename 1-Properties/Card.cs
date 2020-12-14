@@ -53,7 +53,7 @@ namespace Properties
         /// <inheritdoc cref="object.ToString"/>
         public override string ToString()
         {
-            return "Name: " + GetName + " - Seed: " + GetSeed + " - Ordinal: " + GetOrdinal;
+            return "Name: " + GetName.ToString() + " - Seed: " + GetSeed.ToString() + " - Ordinal: " + GetOrdinal.ToString();
             //return $"{this.GetType().Name}(Name={this.GetName()}, Seed={this.GetSeed()}, Ordinal={this.GetOrdinal()})";
         }
 
@@ -69,10 +69,5 @@ namespace Properties
         {
             return HashCode.Combine(seed, name, ordinal);
         }
-
-
-        // TODO generate Equals(object obj)
-
-        // TODO generate GetHashCode()
     }
 }
