@@ -1,15 +1,14 @@
 namespace Properties
 {
     using System;
+    using System.Collections.Generic;
+    using System.Text;
 
     /// <summary>
     /// The class models a card.
     /// </summary>
     public class Card
     {
-        private readonly string seed;
-        private readonly string name;
-        private readonly int ordinal;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Card"/> class.
@@ -19,9 +18,10 @@ namespace Properties
         /// <param name="ordinal">the ordinal number of the card.</param>
         public Card(string name, string seed, int ordinal)
         {
-            this.name = name;
-            this.ordinal = ordinal;
-            this.seed = seed;
+            
+            this.Name = name;
+            this.Ordinal = ordinal;
+            this.Seed = seed;
         }
 
         /// <summary>
@@ -33,34 +33,31 @@ namespace Properties
         {
         }
 
-        // TODO improve
-        public string GetSeed()
+        public string Seed
         {
-            return this.seed;
+            get;
+        }
+        public string Name
+        {
+            get;
         }
 
-        // TODO improve
-        public string GetName()
+        public int Ordinal
         {
-            return this.name;
-        }
-
-        // TODO improve
-        public int GetOrdinal()
-        {
-            return this.ordinal;
+            get;
         }
 
         /// <inheritdoc cref="object.ToString"/>
         public override string ToString()
         {
-            // TODO understand string interpolation
-            return $"{this.GetType().Name}(Name={this.GetName()}, Seed={this.GetSeed()}, Ordinal={this.GetOrdinal()})";
+            return "Name: " + Name.ToString() + " - Seed: " + Seed.ToString() + " - Ordinal: " + Ordinal.ToString() + "\n";
+            //return $"{this.GetType().Name}(Name={this.GetName()}, Seed={this.GetSeed()}, Ordinal={this.GetOrdinal()})";
         }
 
         public override bool Equals(object obj)
         {
             return obj is Card card &&
+<<<<<<< HEAD
                    seed == card.seed &&
                    name == card.name &&
                    ordinal == card.ordinal;
@@ -72,7 +69,16 @@ namespace Properties
         }
 
         // TODO generate Equals(object obj)
+=======
+                   Seed == card.Seed &&
+                   Name == card.Name &&
+                   Ordinal == card.Ordinal;
+        }
+>>>>>>> b765cd2e89a89a2be52c17dfb6658fb0e122b29c
 
-        // TODO generate GetHashCode()
+        public override int GetHashCode()
+        {
+            return HashCode.Combine(Seed, Name, Ordinal);
+        }
     }
 }
